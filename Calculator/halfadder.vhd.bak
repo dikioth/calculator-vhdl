@@ -1,0 +1,94 @@
+-- Max x,y values: (9999)_10 => (10011100001111)_2
+-- sel:
+--      001 : summa
+--     010 : substraction
+--     011 : mult
+--     else: do nothing.
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity alu is
+  port (X        : in  std_logic_vector(13 downto 0);  -- first var.
+        Y        : in  std_logic_vector(13 downto 0);  -- second num
+        sel      : in  std_logic_vector(1 downto 0);   -- operation
+        output   : out std_logic_vector(13 downto 0);  -- result
+        overflow : out std_logic;                      -- overflow
+        ng       : out std_logic;                      -- negative output.
+        zr       : out std_logic);                     -- zero output
+end alu;
+
+architecture Behavioral of alu is
+  signal result                                                     : std_logic_vector(13 downto 0);
+  signal c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13 : std_logic;
+begin
+  process(X, Y, sel)
+  begin
+    case sel is
+      when "01" =>
+        -- ADDITION USING FULL ADDERS.
+
+        -- first half adder
+        result(0) <= X(0) xor Y(0);
+        c0        <= X(0) and Y(0);
+
+        -- 12 full adders
+        result(1) <= X(1) xor Y(1) xor c0;
+        c1        <= ((X(1) xor Y(1)) and c0) or (X(1) and Y(1));
+
+        -- second Full adder
+        result(2) <= X(2) xor Y(2) xor c1;
+        c2        <= ((X(2) xor Y(2)) and c1) or (X(2) and Y(2));
+
+        result(3) <= X(3) xor Y(3) xor c2;
+        c3        <= ((X(3) xor Y(3)) and c2) or (X(3) and Y(3));
+
+        result(4) <= X(4) xor Y(4) xor c3;
+        c4        <= ((X(4) xor Y(4)) and c3) or (X(4) and Y(4));
+
+        result(5) <= X(5) xor Y(5) xor c4;
+        c5        <= ((X(5) xor Y(5)) and c4) or (X(5) and Y(5));
+
+        result(6) <= X(6) xor Y(6) xor c5;
+        c6        <= ((X(6) xor Y(6)) and c5) or (X(6) and Y(6));
+
+        result(7) <= X(7) xor Y(7) xor c6;
+        c7        <= ((X(7) xor Y(7)) and c6) or (X(7) and Y(7));
+
+        result(8) <= X(8) xor Y(8) xor c7;
+        c8        <= ((X(8) xor Y(8)) and c7) or (X(8) and Y(8));
+
+        result(9) <= X(9) xor Y(9) xor c8;
+        c9        <= ((X(9) xor Y(9)) and c8) or (X(9) and Y(9));
+
+        result(10) <= X(10) xor Y(10) xor c9;
+        c10        <= ((X(10) xor Y(10)) and c9) or (X(10) and Y(10));
+
+        result(11) <= X(11) xor Y(11) xor c10;
+        c11        <= ((X(11) xor Y(11)) and c10) or (X(11) and Y(11));
+
+        result(12) <= X(12) xor Y(12) xor c11;
+        c12        <= ((X(12) xor Y(12)) and c11) or (X(12) and Y(12));
+
+        result(13) <= X(13) xor Y(13) xor c12;
+        c13        <= ((X(13) xor Y(13)) and c12) or (X(13) and Y(13));
+
+        if c13 = '1' then
+          overflow <= '1';
+        else
+          overflow <= '0';
+        end if;
+
+      when "10" =>                      -- substraction
+        null;
+
+      when "11" =>                      -- multiplication
+        null;
+      when others =>
+        null;
+    end case;
+
+  end process;
+  output <= result;
+end Behavioral;

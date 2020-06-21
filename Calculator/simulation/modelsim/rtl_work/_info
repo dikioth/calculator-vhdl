@@ -1,0 +1,202 @@
+m255
+K3
+13
+cModel Technology
+Z0 dX:\Documents\VHDL-kurs\Project\Project\Calculator\simulation\modelsim
+Edebounce
+Z1 w1554728918
+Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z6 dX:\Documents\VHDL-kurs\Project\Project\Calculator\simulation\modelsim
+Z7 8X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd
+Z8 FX:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd
+l0
+L29
+VG[oi:^ITPQ@8]oKhfK:GF1
+!s100 ndc5=nW_ndSl]GR0Jofbk2
+Z9 OV;C;10.1d;51
+32
+!i10b 1
+Z10 !s108 1554728999.648000
+Z11 !s90 -reportprogress|300|-work|work|-O0|X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd|
+Z12 !s107 X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd|
+Z13 o-work work -O0
+Z14 tExplicit 1
+Alogic
+R2
+R3
+R4
+R5
+Z15 DEx4 work 8 debounce 0 22 G[oi:^ITPQ@8]oKhfK:GF1
+l43
+L39
+Z16 VVn0>54=WbIa[RCzW`gP6g3
+Z17 !s100 C_i_PAYg5Yo]iKgIN8G>o0
+R9
+32
+!i10b 1
+R10
+R11
+R12
+R13
+R14
+Edecoder
+Z18 w1554721060
+R3
+R2
+R4
+R5
+R6
+Z19 8X:/Documents/VHDL-kurs/Project/Project/Calculator/decoder.vhd
+Z20 FX:/Documents/VHDL-kurs/Project/Project/Calculator/decoder.vhd
+l0
+L7
+VEcePlP?:C<?P`HC[FcBzN0
+R9
+31
+Z21 !s108 1554725533.706000
+Z22 !s90 -reportprogress|300|-93|-work|work|X:/Documents/VHDL-kurs/Project/Project/Calculator/decoder.vhd|
+Z23 !s107 X:/Documents/VHDL-kurs/Project/Project/Calculator/decoder.vhd|
+Z24 o-93 -work work -O0
+R14
+!s100 FYT@O9N`W_EdQkI>3d[n70
+!i10b 1
+Abehavioral
+R3
+R2
+R4
+R5
+DEx4 work 7 decoder 0 22 EcePlP?:C<?P`HC[FcBzN0
+l20
+L16
+VdjCM:D5`9_06TP8mWc7TZ3
+R9
+31
+R21
+R22
+R23
+R24
+R14
+!s100 f<2W4gY:hZc8>d6^4@3`O2
+!i10b 1
+Efreqdiv
+Z25 w1554472783
+Z26 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R4
+R5
+R6
+Z27 8X:/Documents/VHDL-kurs/Project/Project/Calculator/freqdiv.vhd
+Z28 FX:/Documents/VHDL-kurs/Project/Project/Calculator/freqdiv.vhd
+l0
+L4
+V^[M9j^Sml0fL9b1naBF]M1
+R9
+31
+Z29 !s108 1554725532.353000
+Z30 !s90 -reportprogress|300|-93|-work|work|X:/Documents/VHDL-kurs/Project/Project/Calculator/freqdiv.vhd|
+Z31 !s107 X:/Documents/VHDL-kurs/Project/Project/Calculator/freqdiv.vhd|
+R24
+R14
+!s100 95fG4AbziQkPJQ1a3kF1N0
+!i10b 1
+Abehavioral
+R26
+R4
+R5
+DEx4 work 7 freqdiv 0 22 ^[M9j^Sml0fL9b1naBF]M1
+l15
+L10
+VKJL]aY`1?oQ33H:L4<`6P3
+R9
+31
+R29
+R30
+R31
+R24
+R14
+!s100 d:[9l>U2T]U8WCHSQdYnR0
+!i10b 1
+Ememory
+Z32 w1554723927
+R26
+R3
+R2
+R4
+R5
+R6
+Z33 8X:/Documents/VHDL-kurs/Project/Project/Calculator/memory.vhd
+Z34 FX:/Documents/VHDL-kurs/Project/Project/Calculator/memory.vhd
+l0
+L9
+VAEHESfW[DS6HIZ_JEKVS[3
+R9
+31
+Z35 !s108 1554725531.920000
+Z36 !s90 -reportprogress|300|-93|-work|work|X:/Documents/VHDL-kurs/Project/Project/Calculator/memory.vhd|
+Z37 !s107 X:/Documents/VHDL-kurs/Project/Project/Calculator/memory.vhd|
+R24
+R14
+!s100 `GFHBa5LFalWEMMe`5nPY3
+!i10b 1
+Abehavioral
+R26
+R3
+R2
+R4
+R5
+DEx4 work 6 memory 0 22 AEHESfW[DS6HIZ_JEKVS[3
+l34
+L22
+VB`[@nC1@;4KdZ6OBkR?N`3
+R9
+31
+R35
+R36
+R37
+R24
+R14
+!s100 bV85_1NW_oCL7]5a51DWM3
+!i10b 1
+Erotator
+R25
+R26
+R3
+R2
+R4
+R5
+R6
+Z38 8X:/Documents/VHDL-kurs/Project/Project/Calculator/rotator.vhd
+Z39 FX:/Documents/VHDL-kurs/Project/Project/Calculator/rotator.vhd
+l0
+L7
+VS^P7zV6=F_OMBcX3fFAA60
+R9
+31
+Z40 !s108 1554725533.275000
+Z41 !s90 -reportprogress|300|-93|-work|work|X:/Documents/VHDL-kurs/Project/Project/Calculator/rotator.vhd|
+Z42 !s107 X:/Documents/VHDL-kurs/Project/Project/Calculator/rotator.vhd|
+R24
+R14
+!s100 G_loPKiENjTXdi;VbbBKK1
+!i10b 1
+Abehavioral
+R26
+R3
+R2
+R4
+R5
+DEx4 work 7 rotator 0 22 S^P7zV6=F_OMBcX3fFAA60
+l15
+L12
+VPXU0Q?08ci9g_k_3SBJ9Z3
+R9
+31
+R40
+R41
+R42
+R24
+R14
+!s100 bK1Eo3_8Nc7hDRzTDM>z;0
+!i10b 1

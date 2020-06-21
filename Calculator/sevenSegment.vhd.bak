@@ -1,0 +1,22 @@
+-- Frequency devider
+library ieee;
+use ieee. std_logic_1164.all;
+use ieee. std_logic_arith.all;
+use ieee. std_logic_unsigned.all;
+
+entity rotator is
+  port(clk : in  std_logic;
+       row : out std_logic_vector(3 downto 0));
+end rotator;
+
+architecture behavioral of rotator is
+  signal temp : std_logic_vector(3 downto 0) := "1110";
+begin
+  process (clk)
+  begin
+    if rising_edge(clk) then
+      temp <= shift_left(temp, 1);
+    end if;
+  end process;
+  row <= temp;
+end behavioral;

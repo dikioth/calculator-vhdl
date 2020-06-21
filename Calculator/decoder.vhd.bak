@@ -1,0 +1,26 @@
+-- Frequency devider
+library ieee;
+use ieee. std_logic_1164.all;
+use ieee. std_logic_arith.all;
+use ieee. std_logic_unsigned.all;
+
+entity decoder is
+  port(CLK, NRST : in  std_logic;
+       CLK_OUT   : out std_logic);
+end decoder;
+
+architecture behavioral of labb3 is
+  signal Q : std_logic_unsigned;
+  signal D : std_logic;
+
+begin
+  CLK_OUT <= Q;
+  process(CLK, NRST)
+  begin
+    if(NRST = '0') then
+      Q <= '0';
+    elsif(CLK = '1' and CLK'event) then
+      Q <= Q + 1;
+    end if;
+  end process;
+end behavioral;

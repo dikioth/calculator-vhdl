@@ -1,0 +1,209 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do calculator_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {X:/Documents/VHDL-kurs/Project/Project/Calculator/memory.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity memory
+# -- Compiling architecture behavioral of memory
+# vcom -93 -work work {X:/Documents/VHDL-kurs/Project/Project/Calculator/freqdiv.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity freqdiv
+# -- Compiling architecture Behavioral of freqdiv
+# vcom -93 -work work {X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity debounce
+# -- Compiling architecture logic of debounce
+# vcom -93 -work work {X:/Documents/VHDL-kurs/Project/Project/Calculator/rotator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity rotator
+# -- Compiling architecture behavioral of rotator
+# vcom -93 -work work {X:/Documents/VHDL-kurs/Project/Project/Calculator/decoder.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity decoder
+# -- Compiling architecture behavioral of decoder
+# 
+wave create -pattern none -portmode in -language vhdl /debounce/clk
+# debounce
+wave create -pattern none -portmode in -language vhdl /debounce/button
+# debounce
+wave create -pattern none -portmode out -language vhdl /debounce/result
+# debounce
+vcom -93 -work work -O0 X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity debounce
+# -- Compiling architecture logic of debounce
+vcom -reportprogress 300 -work work X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity debounce
+# -- Compiling architecture logic of debounce
+vsim work.debounce
+# vsim work.debounce 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.debounce(logic)
+add wave -position end  sim:/debounce/result
+wave modify -driver freeze -pattern clock -initialvalue (no value) -period 2ms -dutycycle 50 -starttime 0ms -endtime 30ms Edit:/debounce/clk
+# ** Error: (vish-4026) Value "(no" does not represent a literal of the enumeration type.
+#Invalid value to -initialvalue switch: (no
+# 
+wave modify -driver freeze -pattern clock -initialvalue 1 -period 2ms -dutycycle 50 -starttime 0ms -endtime 40ms Edit:/debounce/clk
+# debounce
+wave modify -driver freeze -pattern constant -value 1 -starttime 1ms -endtime 40ms Edit:/debounce/button
+# debounce
+wave modify -driver freeze -pattern constant -value 0 -starttime 0ms -endtime 1ms Edit:/debounce/button
+# debounce
+run -all
+restart
+wave modify -driver freeze -pattern constant -value 0 -starttime 15ms -endtime 40ms Edit:/debounce/button
+# debounce
+run -all
+vcom -reportprogress 300 -work work X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity debounce
+# -- Compiling architecture logic of debounce
+restart
+# Loading work.debounce(logic)
+run -all
+vcom -work work -O0 X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity debounce
+# -- Compiling architecture logic of debounce
+restart
+# Loading work.debounce(logic)
+run -all
+vcom -work work -O0 X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity debounce
+# -- Compiling architecture logic of debounce
+# ** Error: X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd(53): near "elsif": expecting ';'
+# ** Error: X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd(71): near "logic": expecting IF
+# C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
+vcom -work work -O0 X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity debounce
+# -- Compiling architecture logic of debounce
+# ** Error: X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd(53): near "elsif": expecting ';'
+# ** Error: X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd(72): near "logic": expecting PROCESS
+# C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
+vcom -work work -O0 X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity debounce
+# -- Compiling architecture logic of debounce
+# ** Error: X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd(53): near "elsif": expecting ';'
+# ** Error: X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd(72): VHDL Compiler exiting
+# C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
+vcom -work work -O0 X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity debounce
+# -- Compiling architecture logic of debounce
+restart
+# Loading work.debounce(logic)
+run -all
+wave modify -driver freeze -pattern constant -value 0 -starttime 0ms -endtime 40ms Edit:/debounce/button
+# debounce
+wave modify -driver freeze -pattern constant -value 1 -starttime 10ms -endtime 15ms Edit:/debounce/button
+# debounce
+restart
+run -all
+vcom -work work -O0 X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity debounce
+# -- Compiling architecture logic of debounce
+restart
+# Loading work.debounce(logic)
+run -all
+vcom -work work -O0 X:/Documents/VHDL-kurs/Project/Project/Calculator/debounce.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity debounce
+# -- Compiling architecture logic of debounce
+restart
+# Loading work.debounce(logic)
+run -all

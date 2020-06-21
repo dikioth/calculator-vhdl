@@ -1,0 +1,41 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.ALL;
+entity freqdiv is
+    Port (clk : in  STD_LOGIC;
+        nrst  : in  STD_LOGIC;
+        clk_out: out STD_LOGIC;
+		  clk_signalTap: out STD_LOGIC);
+end freqdiv;
+architecture Behavioral of freqdiv is
+	signal count: integer:=1;
+	signal count2: integer:=1;	--for signal tap
+	signal tmp : std_logic := '0';
+	signal tmp2 : std_logic := '0'; --for signal tap
+begin
+    frequency_divider: process (nrst, clk) begin
+        if falling_edge(nrst) then 									
+				count <= 1;
+				count2 <= 1;			
+		  elsif rising_edge(clk) then				
+					count <= count + 1; 
+					count2 <= count2 +1;	  
+			  if (count = 50000) then
+					tmp <= not(tmp);
+					count <= 1;
+			  end if;
+			  if (count2 = 5000) then
+					tmp2 <= not (tmp2);
+					count2 <= 1;
+			  end if;
+		  end if;
+		  clk_out <= tmp;
+		  clk_signalTap <= tmp2;
+    end process;
+end Behavioral;
+
+
+
+
+
+

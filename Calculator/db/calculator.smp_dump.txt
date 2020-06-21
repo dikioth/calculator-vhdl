@@ -1,0 +1,24 @@
+
+State Machine - |calculator|decoder:inst|binstate
+Name binstate.D binstate.C binstate.B binstate.A binstate.Z 
+binstate.Z 0 0 0 0 0 
+binstate.A 0 0 0 1 1 
+binstate.B 0 0 1 0 1 
+binstate.C 0 1 0 0 1 
+binstate.D 1 0 0 0 1 
+
+State Machine - |calculator|controller:inst3|opstate
+Name opstate.EQUAL opstate.OPERATION opstate.CLEAR opstate.NUMBER 
+opstate.NUMBER 0 0 0 0 
+opstate.CLEAR 0 0 1 1 
+opstate.OPERATION 0 1 0 1 
+opstate.EQUAL 1 0 0 1 
+
+State Machine - |calculator|controller:inst3|state
+Name state.EQ state.D state.C state.B state.A state.ZERO 
+state.ZERO 0 0 0 0 0 0 
+state.A 0 0 0 0 1 1 
+state.B 0 0 0 1 0 1 
+state.C 0 0 1 0 0 1 
+state.D 0 1 0 0 0 1 
+state.EQ 1 0 0 0 0 1 

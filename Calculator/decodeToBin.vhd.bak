@@ -1,0 +1,40 @@
+library ieee;
+use ieee. std_logic_1164.all;
+use ieee. std_logic_arith.all;
+use ieee. std_logic_unsigned.all;
+
+entity sevenSegment is
+  port(coded   : in  std_logic_vector(3 downto 0);
+       clk     : in  std_logic;
+       decoded : out std_logic_vector(6 downto 0));
+end sevenSegment;
+
+architecture behavioral of sevenSegment is
+  signal temp : std_logic_vector(6 downto 0);
+begin
+  process (coded)
+  begin
+    --if rising_edge(clk) then
+    case coded is
+      when x"0"   => temp <= "0000001";
+      when x"1"   => temp <= "1001111";
+      when x"2"   => temp <= "0010010";
+      when x"3"   => temp <= "0000110";
+      when x"4"   => temp <= "1001100";
+      when x"5"   => temp <= "0100100";
+      when x"6"   => temp <= "0100000";
+      when x"7"   => temp <= "0001111";
+      when x"8"   => temp <= "0000000";
+      when x"9"   => temp <= "0000100";
+      when x"A"   => temp <= "0001000";
+      when x"B"   => temp <= "1100000";
+      when x"C"   => temp <= "0110001";
+      when x"D"   => temp <= "1000010";
+      when x"E"   => temp <= "0110000";
+      when x"F"   => temp <= "0111000";
+      when others => temp <= "1111111";
+    end case;
+  --    end if;
+  end process;
+  decoded <= temp;
+end behavioral;
